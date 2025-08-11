@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "123",
+      "name": "Sid",
+      "email": "sid@gmail.com",
+      "password": "123456",
+      "role": "public",
+      "isActive": true
+    },
+    {
+      "id": "946b",
+      "email": "bella@gmail.com",
+      "password": "1234",
+      "name": "Bella",
+      "role": "admin",
+      "isActive": true
+    },
+    {
+      "id": "fbdf",
+      "email": "parth@gmail.com",
+      "password": "5678",
+      "name": "Parth",
+      "role": "public",
+      "isActive": true
+    },
+    {
+      "id": "4792",
+      "email": "sai@gmail.com",
+      "password": "1234",
+      "name": "sai",
+      "role": "admin",
+      "isActive": true
+    }
+  ]
+}
