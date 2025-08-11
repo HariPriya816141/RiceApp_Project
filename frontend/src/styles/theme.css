@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Great+Vibes&family=Jaini&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+
+*{
+    font-family: "TikTok Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* login styles */
+.login-bg{
+    background-color: #f9faf5;
+    min-height: 100vh;
+    background-image: 
+    linear-gradient(0deg, rgba(46, 125, 60, 0.078) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 125, 60, 0.078) 1px, transparent 1px);
+    background-size: 50px 50px;
+}

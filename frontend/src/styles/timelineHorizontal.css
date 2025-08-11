@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Great+Vibes&family=Jaini&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+
+
+.timeline-section{
+margin-top: 2rem;
+background: #fffdf4;
+}
+
+
+.horizontal-timeline .timeline-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 20px; /* 20px spacing on both sides */
+  overflow-x: hidden; /* remove scrollbar */
+  max-width: 100%;
+  position: relative;
+  border-left: none !important;
+  
+}
+
+.horizontal-timeline .timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 24px; /* reduce height */
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: #dcdcdc;
+  z-index: 1;
+}
+
+.horizontal-timeline .timeline-item {
+  width: 180px;
+  flex: 0 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensure marker & content are centered */
+}
+
+
+.horizontal-timeline .timeline-marker {
+  width: 16px;
+  height: 16px;
+  background: #4caf50;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px #4caf50;
+  position: absolute;
+  top: -16px; /* pull it up to sit on the horizontal line */
+  left: 50%;
+  transform: translateX(0);
+  z-index: 3;
+}
+
+
+.horizontal-timeline .timeline-content {
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.horizontal-timeline .timeline-year {
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+  color: #4caf50;
+}
+
+.timeline-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+.half-underline {
+ font-family: "Libertinus Sans", sans-serif;
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: green;
+}
+
+.half-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; /* spacing from text */
+  left: 25%;
+  transform: translateX(-50%);
+  width: 50%; /* half-width */
+  height: 3px;
+  background-color: gold; /* or any color you want */
+  border-radius: 2px;
+}
+
+
+
+
+

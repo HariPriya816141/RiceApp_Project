@@ -1,0 +1,91 @@
+.stat-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.stat-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  flex: 1 1 calc(33.33% - 1rem); /* prevents overflow */
+  background: linear-gradient(to right, #72c0e7, #ebedee);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease both;
+  min-width: 250px;
+  max-width: 320px;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.stat-title {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+/* Add this to the bottom of your existing statCards.css */
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #bfa100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* 👆 Main card hover triggers subtle icon pulse */
+.stat-card:hover .stat-icon {
+  background-color: #fff; /* icon circle turns white */
+  transform: scale(1.1); /* slight zoom */
+}
+
+.stat-card:hover .stat-icon svg {
+  color: #bfa100 !important; /* icon itself changes to gold */
+  transition: color 0.3s ease;
+}
+
+/* Optional: if you want the icon to pulse infinitely on hover */
+@keyframes pulseIcon {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.stat-card:hover .stat-icon {
+  animation: pulseIcon 1s ease-in-out infinite;
+}
+
+
+

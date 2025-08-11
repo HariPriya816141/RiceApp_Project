@@ -1,0 +1,181 @@
+.contact{
+  background-color: #fefcf5;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-60%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+/* contact-info */
+.contact-info {
+  padding: 60px 20px;
+  background-color: #fefcf5;
+  text-align: center;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  color: #4b320d;
+  margin-bottom: 40px;
+}
+
+.info-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.info-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 25px;
+  max-width: 250px;
+  flex: 1 1 200px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  font-size: 30px;
+  color: #d1a934;
+  margin-bottom: 12px;
+}
+
+.details h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #403420;
+}
+
+.details p {
+  margin: 5px 0 0;
+  color: #707070;
+  font-size: 0.95rem;
+}
+
+/* contact-form section */
+.contact-form-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  align-items: stretch; /* <- this is key */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.suggestion-box,
+.form-box {
+  width: 42%; /* or something like 480px */
+  max-width: 450px;
+}
+
+
+.suggestion-box .card-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+
+.card-box {
+  padding: 1.5rem;
+  border-radius: 1.rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  width: 100%;
+  display: flex;            /* Allow content to grow inside */
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+  .gradient-pink {
+    background: linear-gradient(to right, #fce4ec, #f8bbd0);
+    color: #4a004d;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .ant-form-item-label > label {
+    color: #007d44; /* dark green */
+    font-weight: 500;
+  }
+
+  .ant-btn-primary {
+    background: linear-gradient(135deg, #007d44, #daa520); /* green to gold */
+    border: none;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .ant-btn-primary:hover {
+    background: linear-gradient(135deg, #006937, #c19f16);
+  }
+
+  /* adress and ma[ */
+.address-map-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap;
+
+  .address-box {
+    flex: 1;
+    min-width: 260px;
+    font-size: 1rem;
+    color: #2e2e2e;
+    font-weight: 500;
+
+    h3 {
+      font-size: 1.4rem;
+      color: #e91e63;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0.3rem 0;
+    }
+  }
+
+  .map-box {
+    flex: 2;
+    min-width: 300px;
+    height: 250px;
+  }
+}
+
+
+
+
+
+
+

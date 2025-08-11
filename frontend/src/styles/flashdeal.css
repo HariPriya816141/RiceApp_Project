@@ -1,0 +1,70 @@
+.flash-deal-banner {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1.5rem;
+  margin: 5rem auto;
+  max-width: 900px;
+  box-shadow: 8px 4px 43px 8px rgba(255,105,180,0.29);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.flash-deal-banner h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.flash-deal-banner .timer {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: monospace;
+  margin-bottom: 1.5rem;
+  animation: pulse 1s infinite;
+}
+
+.shop-flash-btn {
+  background: white;
+  color: #ff3c00;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.shop-flash-btn:hover {
+  background: #ffe0cc;
+  color: #e60023;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+  }
+}

@@ -1,0 +1,59 @@
+.topsellers-table-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.section-title {
+  margin-bottom: 1.2rem;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.topsellers-table .ant-table {
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.topsellers-table .ant-table-thead > tr > th {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  font-weight: 600;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.topsellers-table .ant-table-tbody > tr > td {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.topsellers-table .ant-table-tbody > tr:hover > td {
+  background-color: #f8f8f8;
+  transition: background 0.3s ease;
+}
+
+/* TopSellersTable.css */
+
+.custom-top-sellers-table .ant-table-thead > tr > th {
+  background-color: rgba(230, 178, 6, 0.2); /* Header */
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-top-sellers-table .ant-table-tbody > tr > td {
+  background-color: rgba(241, 214, 124, 0.2);/* Body */
+  transition: background-color 0.3s ease;
+}
+
+/* Optional row hover effect */
+.custom-top-sellers-table .ant-table-tbody > tr:hover > td {
+  background-color: #f8f8f8;
+}
+
+

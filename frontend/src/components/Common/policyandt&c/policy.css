@@ -1,0 +1,60 @@
+.policy-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: linear-gradient(120deg, #f5f5f5 0%, #eaffea 100%);
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 128, 0, 0.2);
+  font-size: 14px;
+  color: #222;
+  line-height: 1.7;
+}
+
+.policy-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 100, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.policy-card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #0c7c3b;
+}
+
+.policy-content p {
+  margin-bottom: 12px;
+}
+
+.grain {
+  position: absolute;
+  width: 90px;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.grain-left {
+  top: -25px;
+  left: -25px;
+  transform: rotate(-15deg);
+}
+
+.grain-right {
+  bottom: -25px;
+  right: -25px;
+  transform: rotate(25deg);
+}
+
+.policy-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fefcf3; /* subtle rice-themed background */
+}
