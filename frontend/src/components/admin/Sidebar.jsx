@@ -6,7 +6,7 @@ import {
   DollarOutlined,
   UnorderedListOutlined,
 } from "@ant-design/icons";
-import "./adminStyles/Sidebar.css";
+import "./adminStyles/sidebar.css"
 
 const menuItems = [
   { label: "Home", icon: <HomeOutlined /> },
