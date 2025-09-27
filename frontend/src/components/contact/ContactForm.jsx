@@ -7,9 +7,9 @@ const ContactForm = () => {
     <>
     <div className="contact-form-section">
       <div className="suggestion-box ">
-        <Card className="card-box gradient-pink">
+        <Card className="card-box gradient-green">
           <h2>
-            <SmileTwoTone twoToneColor="#eb2f96" /> Feel free to write to us!
+            <SmileTwoTone twoToneColor="#eb2f96"  /> Feel free to write to us!
           </h2>
           <p>Your suggestions matter. Help us serve you better 🌾</p>
         </Card>

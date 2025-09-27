@@ -29,10 +29,10 @@ const items = [
   },
 ];
 
-const ProfileDropdown = () => {
+const ProfileDropdown = ({onClick}) => {
   return (
     <Dropdown
-      menu={{ items }}
+      menu={{ items, onClick }}
       placement="bottomRight"
       trigger={['click']}
       dropdownRender={(menu) => (

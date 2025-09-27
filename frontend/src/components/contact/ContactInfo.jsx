@@ -13,7 +13,7 @@ const contacts = [
 const ContactInfo = () => {
   return (
     <section className="contact-info">
-      <h2>Get in Touch</h2>
+      <h2 className='info-title' style={{color:"green"}}>Get in Touch</h2>
       <div className="info-card-container">
         {contacts.map((item, index) => (
           <div key={index} className="info-card">

@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Great+Vibes&family=Jaini&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap");
 
 .about-hero .hero-content-wrapper {
-  padding: 0 8%; /* more side padding */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 15rem; /* ensures good space between box & image */
+  padding: 0 8%;
+  gap: clamp(6rem, 9vw, 14rem); 
 }
 
 .hero-content-anim-wrapper {
@@ -14,35 +13,33 @@
 }
 
 .about-hero .hero-content-box {
-  flex: 0 0 42%; /* Fixed proportion width */
-  max-width: 700px;
-  padding: 2rem 2.5rem;
+   flex: 0 0 auto;
+  width: clamp(520px, 30vw, 820px);
+  max-width: none; 
+  padding: 2.25rem 3rem; 
   background-image: linear-gradient(120deg, #6b940b 0%, #0cc725 100%);
   border-radius: 20px;
   box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.25);
   border: 2px solid gold;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: default; /* makes it hover-aware */
-  position: relative; /* ensure stacking context */
+  cursor: default; 
+  position: relative; 
   z-index: 2;
   animation: fadeInOpacityOnly 1s ease forwards;
+  margin-right: 10rem;
+  margin-left: -12rem;
 }
 
 .about-hero .image-container {
-  flex: 0 0 42%; /* Equal but fixed width to keep it apart */
-  display: flex;
-  justify-content: flex-end; /* ⬅️ ensures it stays to the right */
-  align-items: center;
-  padding: 2rem;
+ flex: 0 0 auto;
 }
 
 .about-hero .slide-image {
-  max-width: 250px;
-  width: 100%;
+width: clamp(220px, 22vw, 300px);
   height: auto;
-  object-fit: contain;
   border-radius: 30px;
   border: 2px solid gold;
+  animation: floatImage 4s ease-in-out infinite;
 }
 
 /* Keyframe for fade and slide */

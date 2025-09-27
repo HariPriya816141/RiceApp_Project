@@ -1,5 +1,5 @@
 import React from 'react'
-import BlogHero from '../../components/blog/blogHero'
+import BlogHero from "../../components/blog/BlogHero"
 import RecentBlogPosts from '../../components/blog/RecentBlogPosts'
 import PopularCategories from '../../components/blog/PopularCategories'
 import FeaturedStory from '../../components/blog/FeaturedStory'

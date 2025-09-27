@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import riceicon from '../../assets/rice-icon.png';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Input, Dropdown, Avatar, Menu } from "antd";
 import {
   SearchOutlined,
@@ -11,6 +11,7 @@ import {
   BulbFilled,
 } from "@ant-design/icons";
 import "./adminStyles/header.css";
+import { useAuth } from '../../store/context/AuthContext';
 
 const Header = ({ onThemeToggle, isDarkMode }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,8 +20,19 @@ const Header = ({ onThemeToggle, isDarkMode }) => {
     setSearchTerm(e.target.value);
   };
 
+   const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleMenuClick = ({ key }) => {
+    if (key === 'logout') {
+      logout();
+    } else {
+      navigate(`/${key}`);
+    }
+  };
+
   const profileMenu = (
-    <Menu>
+    <Menu mode="horizontal" onClick={handleMenuClick}>
       <Menu.Item key="profile" icon={<UserOutlined />}>
         Profile
       </Menu.Item>
@@ -28,9 +40,9 @@ const Header = ({ onThemeToggle, isDarkMode }) => {
         Settings
       </Menu.Item>
       <Menu.Divider />
-      <Menu.Item key="logout" icon={<LogoutOutlined />}>
-        Logout
-      </Menu.Item>
+      <Menu.Item key="logout" icon={<LogoutOutlined />}  >
+  <Link to="/auth">Logout</Link>
+</Menu.Item>
     </Menu>
   );
 
@@ -65,3 +77,14 @@ const Header = ({ onThemeToggle, isDarkMode }) => {
 
 export default Header;
 
+
+
+
+
+
+
+
+ 
+
+     
+ 

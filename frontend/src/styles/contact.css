@@ -1,6 +1,92 @@
-.contact{
-  background-color: #fefcf5;
+@import url("https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Great+Vibes&family=Jaini&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap");
+
+/* contact hero starts */
+
+.contact-hero .contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  gap: clamp(6rem, 9vw, 14rem); 
 }
+
+.hero-content-anim-wrapper {
+  animation: fadeInSlide 1s ease forwards;
+}
+
+.contact-hero .contact-box {
+  flex: 0 0 auto; 
+  width: clamp(520px, 30vw, 820px);
+  max-width: none; 
+  padding: 2.25rem 3rem; 
+  background-image: linear-gradient(120deg, #6b940b 0%, #0cc725 100%);
+  border-radius: 20px;
+  box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.25);
+  border: 2px solid gold;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default; 
+  position: relative; 
+  z-index: 2;
+  animation: fadeInOpacityOnly 1s ease forwards;
+  margin-right: 10rem;
+  margin-left: -12rem;
+}
+
+.contact-hero .contact-image-wrap {
+  flex: 0 0 auto;
+}
+
+.contact-hero .slide-image {
+  width: clamp(220px, 22vw, 300px);
+  height: auto;
+  border-radius: 30px;
+  border: 2px solid gold;
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+
+/* Keyframe for fade and slide */
+@keyframes fadeInOpacityOnly {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.contact-hero .hero-content-box,
+.contact-hero .image-container {
+  animation: fadeInSlide 1s ease forwards;
+}
+
+.contact-hero .hero-content-box:hover {
+  transform: scale(1.03);
+  box-shadow: 12px 14px 22px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.contact-hero .slide-image {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 30px;
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+/*  contact hero section ends */
 
 @keyframes slideIn {
   from {
@@ -16,8 +102,46 @@
 /* contact-info */
 .contact-info {
   padding: 60px 20px;
-  background-color: #fefcf5;
+  background: #fffdf4;
   text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.info-title {
+   position: relative;
+  margin-bottom: 40px;
+  text-align: left;
+  font-family: "Libertinus Sans", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.info-title::after {
+  content: "";
+  position: absolute;
+  bottom: -6px; /* spacing from text */
+  left: 5.4%;
+  transform: translateX(-50%);
+  width: 10%;
+  height: 3px;
+  background-color: gold;
+  border-radius: 2px;
+}
+
+.icon {
+  margin-left: 4rem;
+}
+
+/* Icon container inside card */
+.icon > span {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 214, 102, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-info h2 {
@@ -34,7 +158,7 @@
 }
 
 .info-card {
-  background: #ffffff;
+  background: linear-gradient(-5deg, rgb(245, 240, 169), #fffef7);
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 20px 25px;
@@ -73,9 +197,11 @@
   flex-wrap: wrap;
   gap: 2rem;
   padding: 3rem 1.5rem;
+  background: #fffdf4;
   align-items: stretch; /* <- this is key */
   max-width: 1100px;
   margin: 0 auto;
+  margin-bottom: 3rem;
 }
 
 .suggestion-box,
@@ -84,7 +210,6 @@
   max-width: 450px;
 }
 
-
 .suggestion-box .card-box {
   display: flex;
   flex-direction: column;
@@ -92,51 +217,49 @@
   height: 100%;
 }
 
-
 .card-box {
   padding: 1.5rem;
-  border-radius: 1.rem;
+  border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   background-color: white;
   width: 100%;
-  display: flex;            /* Allow content to grow inside */
+  display: flex; /* Allow content to grow inside */
   flex-direction: column;
   justify-content: space-between;
 }
 
+.gradient-green {
+  background: linear-gradient(-5deg, #bff5a9ff, #fffef7);
+  color: gold;
+}
 
-  .gradient-pink {
-    background: linear-gradient(to right, #fce4ec, #f8bbd0);
-    color: #4a004d;
-  }
+h2 {
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
 
-  h2 {
-    font-weight: bold;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
+p {
+  font-size: 1rem;
+}
 
-  p {
-    font-size: 1rem;
-  }
+.ant-form-item-label > label {
+  color: #007d44; /* dark green */
+  font-weight: 500;
+}
 
-  .ant-form-item-label > label {
-    color: #007d44; /* dark green */
-    font-weight: 500;
-  }
+.ant-btn-primary {
+  background: linear-gradient(135deg, #007d44, #daa520); /* green to gold */
+  border: none;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+}
 
-  .ant-btn-primary {
-    background: linear-gradient(135deg, #007d44, #daa520); /* green to gold */
-    border: none;
-    font-weight: 600;
-    padding: 0.6rem 1.5rem;
-  }
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #006937, #c19f16);
+}
 
-  .ant-btn-primary:hover {
-    background: linear-gradient(135deg, #006937, #c19f16);
-  }
-
-  /* adress and ma[ */
+/* adress and ma[ */
 .address-map-section {
   display: flex;
   justify-content: space-between;
@@ -147,6 +270,7 @@
   border-radius: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   flex-wrap: wrap;
+  background: #fffdf4;
 
   .address-box {
     flex: 1;
@@ -170,12 +294,26 @@
     flex: 2;
     min-width: 300px;
     height: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   }
 }
 
 
+/* 
 
+transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  
+  .section-heading {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2d472c;
+  font-family: "Playfair Display", serif;
+  position: relative;
+  text-align: left;
+}
 
-
-
-
+.section-heading::after {
+  margin-left: 0;
+}
+  */

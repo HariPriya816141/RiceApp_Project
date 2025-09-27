@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   // programmatic navigation
-  let navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   // useeffect to get the data from local stoarge
   useEffect(() => {

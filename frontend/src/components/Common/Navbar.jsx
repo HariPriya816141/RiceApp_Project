@@ -7,9 +7,23 @@ import ProfileDropdown from './ProfileDropdown';
 import './dropdown.css';
 import riceicon from '../../assets/rice-icon.png';
 
+
 const Navbar = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
+
+  
+
+
+  const handleMenuClick = ({ key }) => {
+    if (key === 'logout') {
+      logout();
+      navigate('/auth');
+    } else {
+      navigate(`/${key}`);
+    }
+  };
+  
 
   const handleCartClick = () => {
     if (user) {
@@ -65,7 +79,7 @@ const Navbar = () => {
             />
           </Badge>
 
-          <ProfileDropdown />
+          <ProfileDropdown onClick={handleMenuClick} />
         </div>
       </div>
     </nav>
