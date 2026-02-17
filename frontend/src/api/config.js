@@ -39,8 +39,8 @@ apiClient.interceptors.response.use(
 
 //generating dummy token simulation (actually it will be genearted in backend)
 
-export const mockAuth = {
-    generateToken: (user) => {
-        return `mock_auth ${user.id}_${Date.now()}`
-    }
-}
+// export const mockAuth = {
+//     generateToken: (user) => {
+//         return `mock_auth ${user.id}_${Date.now()}`
+//     }
+// }

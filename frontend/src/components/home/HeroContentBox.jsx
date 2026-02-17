@@ -1,5 +1,4 @@
-// src/components/Home/HeroContentBox.jsx
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles/homeCarousel.css";
 
 export const slideData = [
@@ -26,14 +25,15 @@ export const slideData = [
 ];
 
 const HeroContentBox = ({ heading, caption, image, index }) => {
+  const navigate = useNavigate();
   return (
     <div className="hero-content-wrapper">
         <div className="hero-content-box">
       <h1>{heading}</h1>
       <p>{caption}</p>
       <div className="cta-buttons">
-        <button className="primary-btn">Explore Our Range</button>
-        <button className="secondary-btn">Discover the Taste of Legacy</button>
+        <button className="primary-btn" onClick={() => navigate("/shop?scrollTo=product")}>Explore Our Range</button>
+        <button className="secondary-btn" onClick={() => navigate("/about")}>Discover the Taste of Legacy</button>
       </div>
     </div>
     {/* hero content box ends */}

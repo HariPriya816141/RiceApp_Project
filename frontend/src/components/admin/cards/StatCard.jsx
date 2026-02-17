@@ -1,5 +1,5 @@
 // components/admin/cardsui/StatCards.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   UserOutlined,
   HeartOutlined,
@@ -8,6 +8,7 @@ import {
 
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa6';
 import '../adminStyles/statCards.css'; // if you want to style separately (optional)
+import axios from "axios";
 
 // Card Data
 const statCards = [
@@ -40,8 +41,33 @@ const statCards = [
 
 // Card UI component
 const StatCard = ({ title, value, change, isIncrease, icon, iconBg }) => {
+  const [products, setProducts] = useState({name:"Rice", price:100, quantity:30})
+  console.log(products)
+
+const handleProducts = (e) => {
+  console.log("e", e.target.name);
+}
+
+
+
+  let [users, setUsers] = useState([])
+
+  useEffect(() => {
+    handleUsers()
+  }, [])
+  let handleUsers = async () => {
+    try {
+      let res = await axios.get("http://localhost:3000/users");
+      console.log("res", res);
+      setUsers(res.data);
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
+    <>
     <div className="stat-card">
+
       <div>
         <p className="stat-title">{title}</p>
         <p className="stat-value" style={{display:"inline-block" }}>{value}</p>
@@ -57,6 +83,7 @@ const StatCard = ({ title, value, change, isIncrease, icon, iconBg }) => {
         {icon}
       </div>
     </div>
+    </>
   );
 };
 
@@ -68,6 +95,8 @@ const StatCards = () => {
         <StatCard key={index} {...card} />
       ))}
     </div>
+
+    
   );
 };
 

@@ -3,7 +3,7 @@ import DiamondLine from "../home/DiamondLine";
 import "../../styles/homeCarousel.css";
 import '../../styles/blog.css';
 
-const BlogHero = () => {
+const BlogHero = ({onPopulaCategoriesClick, onVoicesBehindClick}) => {
   return (
     <div className="hero-section blog-hero">
           <DiamondLine />
@@ -17,8 +17,8 @@ const BlogHero = () => {
                   Delve into the world of premium grains, recipes, kitchen tips, and cultural heritage — straight from our rice experts.
                 </p>
                 <div className="cta-buttons">
-                  <button className="primary-btn">Our Mission</button>
-                  <button className="secondary-btn">Meet the Team</button>
+                  <button className="primary-btn" onClick={onPopulaCategoriesClick}>Popular Categories</button>
+                  <button className="secondary-btn" onClick={onVoicesBehindClick}>Voices Behind</button>
                 </div>
               </div>
             </div>

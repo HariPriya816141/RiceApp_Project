@@ -3,7 +3,7 @@ import DiamondLine from "../home/DiamondLine";
 import "../../styles/homeCarousel.css";
 import "../../styles/about.css";
 
-const AboutHero = () => {
+const AboutHero = ({ onMissionClick, onTeamClick }) => {
   return (
     <div className="hero-section about-hero">
       <DiamondLine />
@@ -18,8 +18,8 @@ const AboutHero = () => {
               from the soil to your soul.
             </p>
             <div className="cta-buttons">
-              <button className="primary-btn">Our Mission</button>
-              <button className="secondary-btn">Meet the Team</button>
+              <button className="primary-btn" onClick={onMissionClick}>Our Mission</button>
+              <button className="secondary-btn" onClick={onTeamClick}>Meet the Team</button>
             </div>
           </div>
         </div>

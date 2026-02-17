@@ -6,17 +6,17 @@ import {
   DollarOutlined,
   UnorderedListOutlined,
 } from "@ant-design/icons";
-import "./adminStyles/sidebar.css"
+import "./adminStyles/sidebar.css";
 
 const menuItems = [
-  { label: "Home", icon: <HomeOutlined /> },
-  { label: "Products", icon: <ShoppingCartOutlined /> },
-  { label: "Orders", icon: <UnorderedListOutlined /> },
-  { label: "Users", icon: <UserOutlined /> },
-  { label: "Billings", icon: <DollarOutlined /> },
+  { label: "Home", key: "home", icon: <HomeOutlined /> },
+  { label: "Products", key: "products", icon: <ShoppingCartOutlined /> },
+  { label: "Orders", key: "orders", icon: <UnorderedListOutlined /> },
+  { label: "Users", key: "users", icon: <UserOutlined /> },
+  { label: "Billings", key: "billings", icon: <DollarOutlined /> },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ activeSection, setActiveSection }) => {
   return (
     <aside className="sidebar">
       <div className="sidebar-heading">
@@ -24,10 +24,13 @@ const Sidebar = () => {
       </div>
 
       <nav className="sidebar-nav">
-        {menuItems.map((item, index) => (
+        {menuItems.map((item) => (
           <div
-            key={index}
-            className="sidebar-item"
+            key={item.key}
+            className={`sidebar-item ${
+              activeSection === item.key ? "active" : ""
+            }`}
+            onClick={() => setActiveSection(item.key)}
           >
             <span className="icon">{item.icon}</span>
             <span className="label">{item.label}</span>
@@ -39,4 +42,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-

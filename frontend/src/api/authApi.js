@@ -1,72 +1,36 @@
-import { apiClient, mockAuth } from "./config";
+import { apiClient } from "./config";
 
-
-// function to handle login api
-export const loginUser = async(email, password)=>{
-  try{
-    let res = await apiClient.get('/users', {
-        params:{email}
-    })
-    //checking the user
-    console.log(res);
-    //checking if already the user exists in the database
-    let user = res.data.find(u => u.email == email && u.password == password)
-
-    // if user doesn't exist, throw an error
-    if(!user){
-        throw new Error ("Email and password not found")
-    }
-
-    //generate the token
-    let token = mockAuth.generateToken(user);
-
-    // sav eth etoken and user to local storage
-    localStorage.setItem('token', token)
-     localStorage.setItem('user',JSON.stringify(user))
-
-
-    return { user, token }
-  }catch(error){
-    return error;
-
-  }
-}
-
-// function to handle register api
-export const registerUser = async(newUser) => {
-
+// LOGIN
+export const loginUser = async (email, password) => {
   try {
-    // checking already if the user exists in the db or not
-  let res = await apiClient.get('/users', {
-    params:{email:newUser.email}
-  })
+    const res = await apiClient.post("/auth/login", {
+      email,
+      password,
+    });
 
-  if(res.data.length > 0){
-    throw new Error("User already exists.")
+    const { user, token } = res.data;
+
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(user));
+
+    return { user, token };
+  } catch (error) {
+    throw error.response?.data || { message: "Login failed" };
   }
+};
 
-  let saveUser = await apiClient.post('/users', newUser)
-  console.log(saveUser)
-
-  //generate a token
-  let token = mockAuth.generateToken(saveUser.data)
-
-  // save the token and user to localstorage
-  localStorage.setItem('token', token)
-  localStorage.setItem('user', JSON.stringify(saveUser.data))
-
-  return {user: saveUser.data, token}
-}
-  catch (error) {
-    return error
+// REGISTER
+export const registerUser = async (userData) => {
+  try {
+    const res = await apiClient.post("/auth/register", userData);
+    return res.data;
+  } catch (error) {
+    throw error.response?.data || { message: "Registration failed" };
   }
+};
 
-}
-
-
-
-// function to handle logout api
+// LOGOUT
 export const logoutUser = () => {
-  localStorage.removeItem("token")
-  localStorage.removeItem("user")
-}
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+};

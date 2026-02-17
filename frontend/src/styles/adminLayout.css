@@ -1,0 +1,7 @@
+.admin-main {
+  margin-left: 260px;   /* match sidebar width */
+  padding: 24px;
+  padding-top: 90px;    /* match header height */
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}

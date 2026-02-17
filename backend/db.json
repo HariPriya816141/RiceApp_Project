@@ -31,6 +31,12 @@
       "name": "sai",
       "role": "admin",
       "isActive": true
+    },
+    {
+      "id": "ac82",
+      "name": "Bella",
+      "email": "bella@mail.com",
+      "password": "1234"
     }
   ]
 }
