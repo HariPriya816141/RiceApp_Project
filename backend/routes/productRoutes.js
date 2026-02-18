@@ -13,4 +13,24 @@ router.get("/", async (req, res) => {
   }
 });
 
+// CREATE PRODUCT
+router.post("/", async (req, res) => {
+  try {
+    const { name, price, image } = req.body;
+
+    const product = new Product({
+      name,
+      price,
+      image
+    });
+
+    await product.save();
+
+    res.status(201).json(product);
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+
 module.exports = router;
