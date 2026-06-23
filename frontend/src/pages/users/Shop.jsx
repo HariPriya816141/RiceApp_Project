@@ -3,9 +3,10 @@ import { useLocation } from "react-router-dom";
 import { apiClient } from "../../api/config";
 
 import ShopHero from "../../components/shop/ShopHero.jsx";
-import ProductCard from "../../components/shop/ProductCard.jsx";
+// import ProductCard from "../../components/shop/ProductCard.jsx";
 import FlashDeal from "../../components/shop/FlashDeal.jsx";
 import ShopCarousel from "../../components/shop/ShopCarousel.jsx";
+import ProductGrid from "../../components/shop/ProductCard.jsx";
 
 const Shop = () => {
   const productRef = useRef(null);
@@ -14,18 +15,24 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
 
   //fetch products
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await apiClient.get("/products");
-        setProducts(res.data);
-      } catch (error) {
-        console.log("Error fetching products", error);
-      }
-    };
+useEffect(() => {
+  const fetchProducts = async () => {
+    try {
+      const res = await apiClient.get("/products", {
+        headers: {
+          "Cache-Control": "no-cache",
+        },
+      });
 
-    fetchProducts();
-  }, []);
+      console.log("API Response:", res.data); // 👈 add this
+      setProducts(res.data);
+    } catch (error) {
+      console.log("Error fetching products", error);
+    }
+  };
+
+  fetchProducts();
+}, []);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -43,7 +50,8 @@ const Shop = () => {
         }
       />
       <div ref={productRef}>
-        <ProductCard products={products} />
+        {/* <h1>Products Count: {products.length}</h1> */}
+        <ProductGrid products={products} />
       </div>
       <FlashDeal
         onShopClick={() =>

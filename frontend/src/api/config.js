@@ -5,7 +5,8 @@ import axios from "axios";
 // http://localhost:3000/users ---> user (example)
 
 export const apiClient = axios.create({
-    baseURL: import.meta.env.VITE_BACKEND_BASE_URL,
+    baseURL: "http://localhost:5000/api",
+    withCredentials: true,
     headers: {
         "Content-Type":"application/json"
     }

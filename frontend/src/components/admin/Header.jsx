@@ -11,7 +11,7 @@ import {
   BulbFilled,
 } from "@ant-design/icons";
 import "./adminStyles/header.css";
-import { useAuth } from '../../store/context/AuthContext';
+import useAuth from "../../store/context/useAuth";
 
 const Header = ({ onThemeToggle, isDarkMode }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -68,7 +68,7 @@ const Header = ({ onThemeToggle, isDarkMode }) => {
           {isDarkMode ? <BulbFilled style={{ fontSize: 20 }} /> : <BulbOutlined style={{ fontSize: 20 }} />}
         </div>
         <Dropdown overlay={profileMenu} trigger={["click"]}>
-          <Avatar style={{ backgroundColor: "#fff8e1", cursor: "pointer",color: "#bfa100", border: "1px solid #bfa100" }} icon={<UserOutlined />} />
+          <Avatar style={{ backgroundColor: "#fff8e1", cursor: "pointer",color: "#bfa100", border: "1px solid #bfa100" }} icon={<UserOutlined />} > {user?.name?.charAt(0).toUpperCase()}</Avatar>
         </Dropdown>
       </div>
     </header>

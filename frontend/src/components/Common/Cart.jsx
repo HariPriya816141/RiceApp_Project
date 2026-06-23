@@ -17,6 +17,7 @@ const Cart = () => {
     updatedCart.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     setCartItems(updatedCart);
+    window.dispatchEvent(new Event("cartUpdated"));
   };
 
   const totalAmount = cartItems.reduce(

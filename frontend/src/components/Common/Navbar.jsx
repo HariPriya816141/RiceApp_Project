@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Badge } from "antd";
-import { useAuth } from "../../store/context/AuthContext";
+import useAuth from "../../store/context/useAuth";
 import ProfileDropdown from "./ProfileDropdown";
 import "./dropdown.css";
 import riceicon from "../../assets/rice-icon.png";

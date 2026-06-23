@@ -1,11 +1,12 @@
-import { createContext, useContext, useReducer, useEffect } from "react";
+import { useReducer, useEffect } from "react";
 import authReducer from "../reducers/authReducer";
 import { loginUser, logoutUser, registerUser } from "../../api/authApi";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "./AuthContext";
 
 // creating the store
-export const AuthContext = createContext();
-console.log("context", AuthContext); // returns provider and consumer
+// export const AuthContext = createContext();
+// console.log("context", AuthContext); // returns provider and consumer
 
 //creating initial state
 const initialState = {
@@ -39,6 +40,7 @@ export const AuthProvider = ({ children }) => {
           payload: { user: userData, token }, // information/data passed to reducers
         });
       } catch (error) {
+        console.log(error)
         dispatch({ type: "LOADING_COMPLETE" });
       }
     } else {
@@ -47,19 +49,19 @@ export const AuthProvider = ({ children }) => {
   }, []); // components loads only once at mounting phase (initially when the browser is loaded)
 
   // useEffect to redirect the user to their respective UIs based on the role
-  useEffect(() => {
-    if (state.isAuthenticated && !state.loading) {
-      // checking if user is logged in or not
-      if (state.role === "admin") {
-        return navigate("/admin");
-      } else if (state.role === "vendor") {
-        // checking if user is a dealer
-        return navigate("/vendor");
-      } else {
-        return navigate("/shop"); // default navigation if user's role is public
-      }
-    }
-  }, [state.isAuthenticated, state.role, state.loading]); // runs on change of every variable in the dependency array
+  // useEffect(() => {
+  //   if (state.isAuthenticated && !state.loading) {
+  //     // checking if user is logged in or not
+  //     if (state.role === "admin") {
+  //       return navigate("/admin");
+  //     } else if (state.role === "vendor") {
+  //       // checking if user is a dealer
+  //       return navigate("/vendor");
+  //     } else {
+  //       return navigate("/shop"); // default navigation if user's role is public
+  //     }
+  //   }
+  // }, [state.isAuthenticated, state.role, state.loading, navigate]); // runs on change of every variable in the dependency array
 
   // login state
   const login = async (email, password) => {
@@ -116,8 +118,8 @@ export const AuthProvider = ({ children }) => {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) throw new Error("useAuth must be used within AuthProvider");
-  return context;
-};
+// export const useAuth = () => {
+//   const context = useContext(AuthContext);
+//   if (!context) throw new Error("useAuth must be used within AuthProvider");
+//   return context;
+// };

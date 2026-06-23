@@ -10,7 +10,7 @@ import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { AuthProvider } from './store/context/AuthContext.jsx'
+import { AuthProvider } from './store/context/AuthProvider.jsx'
 import { BrowserRouter } from 'react-router-dom'
 
 

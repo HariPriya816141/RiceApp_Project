@@ -29,7 +29,7 @@
       "email": "sai@gmail.com",
       "password": "1234",
       "name": "sai",
-      "role": "admin",
+      "role": "public",
       "isActive": true
     },
     {

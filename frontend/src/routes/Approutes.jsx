@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import React from "react";
 import { Suspense } from "react"; // fallback ui (loading spinners, etc)
-import { useAuth } from "../store/context/AuthContext";
+import useAuth from "../store/context/useAuth";
 import Privateroutes from "./Privateroutes"; // route_guard
 import Navbar from "../components/Common/Navbar";
 import Footer from "../components/Common/Footer";
