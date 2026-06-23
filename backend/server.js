@@ -10,13 +10,21 @@ dotenv.config();
 const app = express();
 
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://rice-app-project-3wi7gvwxx-hari-priyas-projects-96ef1015.vercel.app"
+];
+
 app.use(cors({
-    origin: [
-      "http://localhost:5173",
-      "rice-app-project-pc2hq4m3a-hari-priyas-projects-96ef1015.vercel.app"
-    ],
-    credentials: true,
-  }));
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+}));
   app.use(express.json());
 
 
