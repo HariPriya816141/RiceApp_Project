@@ -11,7 +11,10 @@ const app = express();
 
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "rice-app-project-pc2hq4m3a-hari-priyas-projects-96ef1015.vercel.app"
+    ],
     credentials: true,
   }));
   app.use(express.json());

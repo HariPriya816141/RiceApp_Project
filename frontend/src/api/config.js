@@ -5,7 +5,8 @@ import axios from "axios";
 // http://localhost:3000/users ---> user (example)
 
 export const apiClient = axios.create({
-    baseURL: "http://localhost:5000/api",
+    // baseURL: "http://localhost:5000/api",
+    baseURL: "https://riceapp-backend-mnso.onrender.com",
     withCredentials: true,
     headers: {
         "Content-Type":"application/json"
