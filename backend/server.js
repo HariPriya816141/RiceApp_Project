@@ -10,22 +10,27 @@ dotenv.config();
 const app = express();
 
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://rice-app-project-3wi7gvwxx-hari-priyas-projects-96ef1015.vercel.app"
-];
+// const allowedOrigins = [
+//   "http://localhost:5173",
+//   "https://rice-app-project-3wi7gvwxx-hari-priyas-projects-96ef1015.vercel.app"
+// ];
+
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   credentials: true,
+// }));
+//   app.use(express.json());
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: true,
   credentials: true,
 }));
-  app.use(express.json());
 
 
 // Routes
